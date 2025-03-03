@@ -1,4 +1,4 @@
-import app  # Adjust the import based on your actual app structure
+from app import app as application
 
 if __name__ == "__main__":
-    app.run()
+    application.run()
