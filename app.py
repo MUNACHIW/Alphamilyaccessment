@@ -70,6 +70,7 @@ def get_bookings():
 
     for booking in bookings:
         booking_data = {
+            "id": booking.id,
             "name": booking.name,
             "email": booking.email,
             "month": booking.month,
@@ -79,6 +80,47 @@ def get_bookings():
         output.append(booking_data)
 
     return jsonify({"bookings": output}), 200
+
+
+@app.route("/book/<int:id>", methods=["PUT"])
+def update_booking(id):
+    data = request.get_json()
+    booking = Booking.query.get_or_404(id)
+
+    booking.name = data.get("name", booking.name)
+    booking.email = data.get("email", booking.email)
+    booking.month = data.get("month", booking.month)
+    booking.day = data.get("day", booking.day)
+    booking.time = data.get("time", booking.time)
+
+    db.session.commit()
+
+    return (
+        jsonify(
+            {
+                "message": "Booking updated successfully",
+                "booking": {
+                    "id": booking.id,
+                    "name": booking.name,
+                    "email": booking.email,
+                    "month": booking.month,
+                    "day": booking.day,
+                    "time": booking.time,
+                },
+            }
+        ),
+        200,
+    )
+
+
+@app.route("/book/<int:id>", methods=["DELETE"])
+def delete_booking(id):
+    booking = Booking.query.get_or_404(id)
+
+    db.session.delete(booking)
+    db.session.commit()
+
+    return jsonify({"message": "Booking deleted successfully"}), 200
 
 
 if __name__ == "__main__":
