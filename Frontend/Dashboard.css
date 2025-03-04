@@ -1,0 +1,124 @@
+/* src/Dashboard.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dashboard {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .chart-container,
+  .form-container,
+  .list-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input,
+  .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #333;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid #ccc;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .actions button {
+    flex: 1;
+  }
+  .form{
+    width: 90%;
+    height: auto;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .chart-container,
+    .form-container,
+    .list-container {
+      padding: 15px;
+      margin: 15px 0;
+    }
+  
+    .input,
+    .button {
+      padding: 8px;
+    }
+  
+    th,
+    td {
+      padding: 8px;
+    }
+  }
+  .canvasholder{
+    width: 100%;
+  }
+canvas{
+    width: 100% !important;
+
+  }
+  .loader {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
